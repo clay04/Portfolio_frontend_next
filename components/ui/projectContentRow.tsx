@@ -3,12 +3,18 @@
 import { useInView, motion } from "framer-motion"
 import { useEffect, useRef } from "react"
 
+interface ProjectProps {
+  project: {
+    title: string;
+    description: string;
+    tech: string[];
+    images: string[];
+  };
+  index: number;
+  setActiveIndex: (index: number) => void;
+}
 
-export default function ProjectContentRow({ project, index, setActiveIndex }: { 
-  project: any; 
-  index: number; 
-  setActiveIndex: (index: number) => void; 
-}) {
+export default function ProjectContentRow({ project, index, setActiveIndex }:ProjectProps) {
   const ref = useRef(null)
   const isInView = useInView(ref, { margin: "-30% 0px -30% 0px" })
 
@@ -51,7 +57,7 @@ export default function ProjectContentRow({ project, index, setActiveIndex }: {
 
         <div className="flex flex-wrap gap-2">
           <span>Tech :</span>
-          {project.tech.map((t) => (
+          {project.tech.map((t: string) => (
             <span
               key={t}
               className="text-xs px-2.5 py-1 rounded-md bg-zinc-800 text-zinc-300 font-medium border border-zinc-700/50"

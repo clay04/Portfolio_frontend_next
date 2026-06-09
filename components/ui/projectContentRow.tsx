@@ -3,7 +3,12 @@
 import { useInView, motion } from "framer-motion"
 import { useEffect, useRef } from "react"
 
-export default function ProjectContentRow({ project, index, setActiveIndex }) {
+
+export default function ProjectContentRow({ project, index, setActiveIndex }: { 
+  project: any; 
+  index: number; 
+  setActiveIndex: (index: number) => void; 
+}) {
   const ref = useRef(null)
   const isInView = useInView(ref, { margin: "-30% 0px -30% 0px" })
 

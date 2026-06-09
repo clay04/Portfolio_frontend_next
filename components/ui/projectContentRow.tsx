@@ -27,8 +27,8 @@ export default function ProjectContentRow({ project, index, setActiveIndex }: {
 
         <div className="w-full mt-2">
           {project.images
-            ?.filter((imgUrl) => imgUrl !== "")
-            .map((imgUrl, idx) => (
+            ?.filter((imgUrl: string) => imgUrl !== "")
+            .map((imgUrl: string, idx: number) => (
               <motion.img 
                 key={idx} 
                 src={imgUrl} 

@@ -3,7 +3,7 @@ export default function Container ({
         children: React.ReactNode
     }) {
         return (
-            <div className="max-w-6xl mx-auto px-4 md:px-6">
+            <div className="max-w-7xl mx-auto px-4 md:px-4 w-full">
                 {children}
             </div>
         )
